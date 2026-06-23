@@ -1,0 +1,74 @@
+/* CSS Custom Properties for H2F Gallery */
+
+:root {
+  /* Domain Colors - Primary */
+  --color-all-primary: #F4AC32;
+  --color-mental-primary: #00CFCF;
+  --color-nutritional-primary: #6AA84F;
+  --color-physical-primary: #FF2153;
+  --color-sleep-primary: #0DA0FF;
+  --color-spiritual-primary: #674EA7;
+
+  /* Domain Colors - Secondary */
+  --color-all-secondary: #F5B447;
+  --color-mental-secondary: #00D8D8;
+  --color-nutritional-secondary: #93C47D;
+  --color-physical-secondary: #FF597E;
+  --color-sleep-secondary: #26AAFF;
+  --color-spiritual-secondary: #8E7CC3;
+
+  /* Neutral Colors */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-text: #333333;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+  --color-border: #e0e0e0;
+  --color-border-focus: #0066cc;
+
+  /* Overlay Colors */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Font Sizes */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Z-Index Layers */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-modal: 1000;
+
+  /* Breakpoint (for reference in JS) */
+  --breakpoint-desktop: 768px;
+
+  /* Grid */
+  --grid-gap: 16px;
+}
+
+/* Utility class to expose variables */
+.variables {
+  /* This class exists to ensure the module is processed */
+}

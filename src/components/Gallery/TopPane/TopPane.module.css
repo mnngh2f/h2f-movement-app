@@ -1,0 +1,71 @@
+/* TopPane Component Styles */
+
+.topPane {
+  padding: var(--spacing-md);
+}
+/* Mobile: Collapsible filter panel */
+.filterPanel {
+  display: none;
+}
+
+.filterPanelOpen {
+  display: grid;
+}
+
+/* Grid Children (dropdowns) */
+.filterRow {
+  display: grid;
+  gap: var(--spacing-xs);
+  grid-template-columns: repeat(auto-fill, minmax(var(--dyn-grid-width-mobile),1fr));
+}
+
+
+/* Mobile toggle button */
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-);
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-xs);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: var(--dyn-font-md);
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.toggleButton:hover {
+  background: var(--color-border);
+}
+
+.toggleIcon {
+  transition: transform var(--transition-fast);
+}
+
+.toggleIconOpen {
+  transform: rotate(180deg);
+}
+
+/* Desktop: Show all filters */
+@media (min-width: 768px) {
+  .topPane {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  /* Grid container */
+  .filterPanel {
+    display: grid;
+  }
+  /* Grid Children (dropdowns) */
+.filterRow {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fill, minmax(var(--dyn-grid-width-desktop),1fr));
+}
+  .toggleButton {
+    display: none;
+  }
+}

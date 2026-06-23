@@ -1,0 +1,169 @@
+/* Card Component Styles */
+
+.card {
+  position: relative;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px var(--color-card-shadow);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Domain Banner */
+.banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: var(--dyn-banner-height);
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--dyn-banner-height)) 0,
+    100% var(--dyn-banner-height),
+    100% 100%,
+    0 100%
+  );
+}
+
+.bannerTriangle {
+  pointer-events: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5cqi 40cqi 0 0;
+  border-color: transparent;
+  z-index: var(--z-banner-triangle);
+}
+
+.bannerIcon {
+  margin-left: auto;
+  margin-right: var(--dyn-banner-height);
+  width: 1.0em;
+  height: 1.0em;
+  z-index: var(--z-banner-text);
+}
+
+.bannerText {
+  margin-left: var(--spacing-lg);
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: var(--dyn-font-banner);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  z-index: var(--z-banner-text);
+}
+
+/* Card Content */
+.content {
+  padding: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Meta Info (Asset | Source) */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Title */
+.title {
+  font-size: var(--dyn-font-title);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Time Badge Positioning */
+.timeBadge {
+  margin-top: auto;
+}
+
+/* Hover Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.75));
+  opacity: 0;
+  display: none;
+  padding: var(--spacing-md);
+  color: white;
+  z-index: var(--z-card-overlay);
+}
+/** Removed title **/
+.overlayTitle {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.overlayDescription {
+  font-size: var(--font-sm);
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: scroll;
+  opacity: 1;
+  scrollbar-width: none; /* Firefox */
+}
+
+.overlayDescription::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Large container: Show overlay on hover */
+@container (min-width: 600px) {
+  .card {
+    height: 100%;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px var(--color-card-shadow);
+  }
+
+  .bannerTriangle {
+    border-width: 4cqi 20cqi 0 0;
+  }
+
+  .bannerText {
+    padding: var(--spacing-xs) var(--spacing-xs);
+    letter-spacing: 0.4px;
+  }
+
+  .title {
+    line-height: 1.0;
+  }
+
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card:hover .overlay {
+    opacity: 1;
+    transition: opacity var(--transition-normal);
+  }
+}
